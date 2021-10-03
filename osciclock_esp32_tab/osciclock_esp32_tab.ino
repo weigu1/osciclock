@@ -1,7 +1,9 @@
-// oscilloscope clock with wemos lolin32 (esp32)
-// weigu.lu
-// (reduce upload speed if errors occur)
-// for tables see libreoffice calc sheet
+/* oscilloscope clock with wemos lolin32 (esp32)
+ * osciclock_esp32_tab.ino
+ * weigu.lu
+ * (reduce upload speed if errors occur)
+ * for tables see libreoffice calc sheet
+ */
 
 #include <WiFi.h>
 #include "time.h"

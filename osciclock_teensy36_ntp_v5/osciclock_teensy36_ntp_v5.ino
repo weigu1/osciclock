@@ -1,6 +1,9 @@
-// oscilloscope clock with teensy 3.6
-// weigu.lu v5 with NTP over serial
-// 2021-05-16
+/* oscilloscope clock with teensy 3.6
+ * osciclock_teensy36_ntp_v5.ino
+ * weigu.lu
+ * v5 with NTP over serial
+ * 2021-05-16
+ */
 
 #include <TimeLib.h> //https://www.pjrc.com/teensy/td_libs_Time.html
 
