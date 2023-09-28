@@ -3,14 +3,12 @@
  * weigu.lu
  * (reduce upload speed if errors occur)
  * for tables see libreoffice calc sheet
+ * DAC 1 = Pin 25, DAC_2 = Pin 26;
  */
 
 #include <WiFi.h>
 #include "time.h"
 #include <driver/dac.h>
-
-const byte dac1 = 25;
-const byte dac2 = 26;
 
 const char* ssid       = "myssid";
 const char* password   = "mypasswd";
@@ -273,6 +271,8 @@ unsigned int hourHand[]={
 
 void setup() {  
   Serial.begin(115200);
+  dac_output_enable(DAC_CHANNEL_1);
+  dac_output_enable(DAC_CHANNEL_2);
   //connect to WiFi
   Serial.printf("Connecting to %s ", ssid);
   WiFi.enableSTA(true);
@@ -304,8 +304,8 @@ void loop() {
 }
 
 void point(int x,int y) {
-  dac_out_voltage(DAC_CHANNEL_1, y);
-  dac_out_voltage(DAC_CHANNEL_2, x);
+  dac_output_voltage(DAC_CHANNEL_1, y);
+  dac_output_voltage(DAC_CHANNEL_2, x);
 }
 
 void line (int x1,int y1,int x2,int y2, int steps) { // draw a line between 2 points  
